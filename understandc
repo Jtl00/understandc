@@ -1,1 +1,26 @@
-kak;djieajkds;akd
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct Student{
+	char name[20];
+	int age;
+} Student;
+Student *createStudent(char *name, int age){
+	Student *rlt = malloc(sizeof(Student));//解决一次性赋值的问题
+	memcpy(rlt->name,name,strlen(name)+1);
+	rlt->age = age;
+	return rlt;
+}
+ int max (int a,int b){
+ 	if(a>b){
+ 		return a;
+ 	}
+ 	else return b;
+ }
+ int main(){
+ 	Student *(*name1)(char*,int);
+ 	name1=createStudent;
+ 	Student *stu=(*name1)("张",13);
+ 	 	printf("%s,%d",stu->name, stu->age);
+
+    } 
